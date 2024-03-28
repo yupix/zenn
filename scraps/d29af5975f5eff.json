@@ -1,0 +1,42 @@
+{
+  "title": "Remixの役に立つ情報まとめ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2024-02-07",
+  "comments": [
+    {
+      "author": "yupix",
+      "created_at": "2024-02-07",
+      "body_markdown": "以下の記事の通り、remix.runとして実際に稼働しているサイトのコードがオープンソースになった。\n既にRemixを使っている人から、これからRemixを使おうと検討している人にとっても参考になると思う\n\nhttps://remix.run/blog/oss-remix-dot-run\n\n実際のリポジトリ\nhttps://github.com/remix-run/remix-website"
+    },
+    {
+      "author": "yupix",
+      "created_at": "2024-02-07",
+      "body_markdown": "Remixでのフォーム管理におすすめのライブラリ\n\n[remix-hook-form](https://github.com/Code-Forge-Net/remix-hook-form) というReact Hook FormのRemix版のようなものもあるが、こちらで十分。最近リリースされた v1.0.0 にて値のサブスクライブが可能になったのでより利便性が増した。(前まではRemix Hook Formのようなwatchもなかったため、自分でどうにかする必要があった)\n\nhttps://github.com/edmundhung/conform"
+    },
+    {
+      "author": "yupix",
+      "created_at": "2024-02-07",
+      "body_markdown": "デバッグに便利なライブラリ\n\nルートの一覧を見れる\n![](https://storage.googleapis.com/zenn-user-upload/3b3193e8d7bf-20240207.png)\n\n移動したページのタイムラインが見れる\n![](https://raw.githubusercontent.com/Code-Forge-Net/Remix-Dev-Tools/main/assets/timeline.gif)\n\n現在のルートの `loader` の戻り値や、 ルート上のパラメータを見ることができる\n![](https://github.com/Code-Forge-Net/Remix-Dev-Tools/blob/main/assets/active-tab.png?raw=true)\n\n他にもいろいろ機能があるので、Remixを使っているなら入れておくと便利\n\nhttps://github.com/Code-Forge-Net/Remix-Dev-Tools\n",
+      "body_updated_at": "2024-02-07"
+    },
+    {
+      "author": "yupix",
+      "created_at": "2024-03-10",
+      "body_markdown": "sitemap.xmlの生成を行ってくれるライブラリ。\nremix-seoのfork、本家が更新止まってしまってるのでこちらを使う。\n\nepic-stackなどもこちらを使用している。\n\nhttps://github.com/nasa-gcn/remix-seo/tree/main",
+      "children": [
+        {
+          "author": "yupix",
+          "created_at": "2024-03-28",
+          "body_markdown": "実際に使用する際はこんな感じで書くといい感じに動く\n\nhttps://github.com/AkariNext/www.akarinext.org/blob/master/app/routes/sitemap%5B.%5Dxml.ts"
+        }
+      ]
+    },
+    {
+      "author": "yupix",
+      "created_at": "2024-03-28",
+      "body_markdown": "viewTransitionの実装例\n\n実際の動き（動画）\nhttps://s3.akarinext.org/misskey/*/2de85d3a-d288-403f-848c-bc000d0fdf40.mp4\n\n\nポイントとしては `NavLink` を使用することで、 `isTransitioning` を使用でき、これが `true` になっているものが現在有効になっているリンクになるのでそれを用いて `viewTransitionName` の有無を変更することで viewTransition の制約である 一意な名前を簡単に満たせるようになる。\n\nRemixとは直接的に関係ないが、 複数 `viewTransitionName` は使用できるので、画像 + テキストを移動先のページに合わせるみたいなこともできる。\n\n\nhttps://github.com/AkariNext/www.akarinext.org/blob/master/app/routes/blog._index.tsx#L18-L46\n\n実際に稼働してるサイト: https://www.akarinext.org/blog",
+      "body_updated_at": "2024-03-28"
+    }
+  ]
+}
